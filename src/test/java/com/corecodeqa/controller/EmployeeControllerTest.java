@@ -24,7 +24,7 @@ public class EmployeeControllerTest {
     public void testEmployeesStatus() {
         given().
                 // baseUri("http://localhost:8080").
-                when().
+                        when().
                 get("/employees").
                 then().
                 log().all().
@@ -56,15 +56,15 @@ public class EmployeeControllerTest {
         Response empResponse = given().
                 // baseUri("http://localhost:8080").
                         contentType(ContentType.JSON).
-                        pathParam("id", "1").
-                        when().
-                        get("/employee/{id}").
-                        then().
-                        log().all().
-                        assertThat().
-                        statusCode(200).
-                        extract().
-                        response();
+                pathParam("id", "1").
+                when().
+                get("/employee/{id}").
+                then().
+                log().all().
+                assertThat().
+                statusCode(200).
+                extract().
+                response();
 
         JsonPath jsonPathObj = empResponse.jsonPath();
         Assertions.assertEquals(jsonPathObj.getLong("id"), 1);
@@ -77,13 +77,13 @@ public class EmployeeControllerTest {
         Response res = given().
                 // baseUri("http://localhost:8080").
                         when().
-                        get("/employees").
-                        then().
-                        log().all().
-                        assertThat().
-                        statusCode(200).
-                        extract().
-                        response();
+                get("/employees").
+                then().
+                log().all().
+                assertThat().
+                statusCode(200).
+                extract().
+                response();
         System.out.println("response = " + res.asString());
     }
 

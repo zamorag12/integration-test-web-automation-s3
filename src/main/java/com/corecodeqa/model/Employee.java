@@ -15,13 +15,13 @@ import javax.persistence.*;
 @Table(name = "employees")
 public class Employee {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-	@Column(name = "name")
-	private String name;
+    @Column(name = "name")
+    private String name;
 
-	@Column(name = "role")
-	private String role;
+    @Column(name = "role")
+    private String role;
 }
